@@ -1,0 +1,46 @@
+/*
+
+We use processes to import command line arguments in the application
+
+1. process.argv
+   -> it returns an array which have paths for the node lib file and to the current file
+   -> we can add to process.argv by using: node file.js bharth (here we have added bharath to the array return by process.argv)
+
+if we want to add some arguments in the command line we can write:
+    node file.js <- arguments with space ->
+
+Yargs module:
+
+a. This is used to add arguments using commands alternative to process.argv
+b. if we send the argument in the command line as follows:
+    -> node file.js add --title="my learning of Node JS"
+   then if we print console.log(yargs.argv):
+    -> { _:[ 'add' ], title:"my learning of Node JS" }
+   for comparision if we print console.log(process.argv):
+    -> [<- node path ->,<- file path ->, 'add', '--title:"my learning of Node JS"']
+
+c. we can customize the version of the file using yargs.version function
+    -> yargs.version('1.1.0') 
+    this will change the version of the current file
+d. we can create custom node commands that can be applied on the current file.
+    -> yargs.command({
+        command: 'add'
+        description: 'This will add a note'
+        handler: function(){
+            console.log('Adding a note!')
+        }
+    })
+
+e. if we want to support arguments in command object description we can use 'builder'
+    -> yargs.command({
+        command: 'add'
+        description: 'This will add a note'
+        builder: {
+            title: {
+                describe: 'Note title'
+            }
+        }
+        handler: function(argv){
+            console.log('Adding a note!',argv)
+        }
+    })

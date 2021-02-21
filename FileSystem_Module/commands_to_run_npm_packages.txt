@@ -10,7 +10,7 @@ ex: install validator modules
     ../notes-app$ npm install validator@13.5.2
 
 Now a node-modules folder will be created and package-lock.json file will be created
-
+`   q
 package-lock.json has the infomration about the version of dependencies installed
 
 To import node modules in the js file we can write the code as follows
