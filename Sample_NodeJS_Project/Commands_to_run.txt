@@ -1,0 +1,5 @@
+/* we can use Terminal in Visual Studio or Web Browser and run the sample.js file as follows:
+
+> node sample.js
+
+The output will be shown in the Terminal */
