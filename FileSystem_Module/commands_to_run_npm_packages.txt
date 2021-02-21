@@ -1,0 +1,25 @@
+/* 
+commands to create package.json file which has all the npm modules that we can use in the project
+
+1. node init 
+   -> it create the notes-app package that has all the npm modules 
+
+Now we will create a notes-app directory on which we can run install commands to install modules 
+
+ex: install validator modules
+    ../notes-app$ npm install validator@13.5.2
+
+Now a node-modules folder will be created and package-lock.json file will be created
+
+package-lock.json has the infomration about the version of dependencies installed
+
+To import node modules in the js file we can write the code as follows
+-> const validator = require('validator')
+
+Before ES6, we have use require() for import modules 
+
+From ES6, we can use 'import' command to import modules
+ex: import validator from 'validator'
+ex: import isEmail from 'validator/lib/isEmail'
+
+*/
